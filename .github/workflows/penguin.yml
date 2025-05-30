@@ -27,5 +27,6 @@ jobs:
       - name: Run tests with pytest
         run: |
           export PYNGUIN_DANGER_AWARE="x"
-          pynguin --project-path . --output-path pynguin-results --module-name car -v
-          coverage run --branch -m pytest test_car.py
+          pynguin --project-path . --output-path pynguin-test --module-name lift -v
+          cp ./lift ./pynguin-test/lift.py
+          coverage run --branch -m pytest test_lift.py
